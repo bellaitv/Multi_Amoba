@@ -158,11 +158,11 @@ public class WinningChecker {
                         }
                     } else sum = 0;
                 else sum = 0;
-                if (sum == 5) {
+                /*if (sum == 5) {
                     IDObject idObject1 = new IDObject(0, 0);
                     Log.d(TAG, "5 on checkLeftDiagonal");
                     return sign;
-                }
+                }*/
             }
         }
         return 1;
