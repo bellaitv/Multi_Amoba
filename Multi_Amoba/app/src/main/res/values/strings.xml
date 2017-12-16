@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Multi Amoba</string>
+    <string name="create_socket">Create game</string>
+    <string name="connect_socket">Connect to game</string>
+    <string name="widi_game">Wifi game</string>
+    <string name="bluetooth_game">Bluetooth game</string>
+    <string name="quit">Quit</string>
+    <string name="port">Port</string>
+    <string name="create">Create</string>
+    <string name="ip_address">Ip address</string>
+    <string name="name">Name</string>
+    <string name="Connect">Connect</string>
+    <string name="playing">Playing</string>
+    <string name="end_game">End Game</string>
+    <string name="title_activity_new_server_blutooth_game">NewServerBlutoothGameActivity</string>
+</resources>
