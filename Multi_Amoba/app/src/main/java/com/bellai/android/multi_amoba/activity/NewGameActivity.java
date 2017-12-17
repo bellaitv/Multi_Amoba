@@ -55,27 +55,6 @@ public class NewGameActivity extends BoardActivity {
             msg = "You lost";
             endOfGame = true;
         }
-
-        /*if (winnerCode != WinningChecker.CONTINUE) {
-            switch (winnerCode) {
-                case WinningChecker.CLIENT_WINS: {
-                    msg = "You won.";
-                    break;
-                }
-                case WinningChecker.SERVER_WINS: {
-                    msg = " You lost.";
-                    break;
-                }
-                case WinningChecker.DRAW: {
-                    msg = "Draw.";
-                    break;
-                }
-                default: {
-                    msg = String.format("something wrong %d", winnerCode);
-                }
-            }
-            endOfGame = true;
-        }*/
         winnerCode = mWinningChecker.check(R.mipmap.newx);
         if(winnerCode == R.mipmap.newx) {
             msg = "You won";
@@ -85,27 +64,6 @@ public class NewGameActivity extends BoardActivity {
             msg = "You lost";
             endOfGame = true;
         }
-
-        /*if (winnerCode != WinningChecker.CONTINUE) {
-            switch (winnerCode) {
-                case WinningChecker.CLIENT_WINS: {
-                    msg = "You lost.";
-                    break;
-                }
-                case WinningChecker.SERVER_WINS: {
-                    msg = " You won.";
-                    break;
-                }
-                case WinningChecker.DRAW: {
-                    msg = "Draw.";
-                    break;
-                }
-                default: {
-                    msg = String.format("something wrong %d", winnerCode);
-                }
-            }
-            endOfGame = true;
-        }*/
         if (endOfGame) {
             makeDialog(msg);
             close();

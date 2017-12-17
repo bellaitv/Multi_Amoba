@@ -61,10 +61,7 @@ public class NewServerGameActivity extends BoardActivity {
         Log.d(TAG, "check start");
         boolean endOfGame = false;
         String msg = new String("End of game");
-        //int winnerCode = mWinningChecker.check(com.bellai.android.multi_amoba.activity.Icon.SERVER);
         int winnerCode = mWinningChecker.check(R.mipmap.newo);
-        /*boolean endOfGame = false;
-        String msg = new String("End of game");*/
         if(winnerCode == R.mipmap.newo) {
             msg = "You lost";
             endOfGame = true;
@@ -82,55 +79,13 @@ public class NewServerGameActivity extends BoardActivity {
             msg = "You won";
             endOfGame = true;
         }
-        /*if (winnerCode != WinningChecker.CONTINUE) {
-            switch (winnerCode) {
-                case WinningChecker.CLIENT_WINS: {
-                    msg = "You won.";
-                    break;
-                }
-                case WinningChecker.SERVER_WINS: {
-                    msg = " You lost.";
-                    break;
-                }
-                case WinningChecker.DRAW: {
-                    msg = "Draw.";
-                    break;
-                }
-                default: {
-                    msg = String.format("something wrong %d", winnerCode);
-                }
-            }
-            endOfGame = true;
-        }
-        winnerCode = mWinningChecker.check(Icon.CLIENT);
-        if (winnerCode != WinningChecker.CONTINUE) {
-            switch (winnerCode) {
-                case WinningChecker.CLIENT_WINS: {
-                    msg = "You lost.";
-                    break;
-                }
-                case WinningChecker.SERVER_WINS: {
-                    msg = " You won.";
-                    break;
-                }
-                case WinningChecker.DRAW: {
-                    msg = "Draw.";
-                    break;
-                }
-                default: {
-                    msg = String.format("something wrong %d", winnerCode);
-                }
-            }
-            endOfGame = true;
-        }*/
-        if (endOfGame) {
+        if (endOfGame)
             try {
                 makeDialog(msg);
                 Server.me.getServer().close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
         Log.d(TAG, "check finish");
     }
 

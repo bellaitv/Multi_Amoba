@@ -74,17 +74,16 @@ public class WinningChecker {
                         sum++;
                         //check others
                         for (int k = 1; k <= 5; k++) {
-                            if( (i + k  <=board.length) && (j - k >= 0)) {
+                            if ((i + k <= board.length) && (j - k >= 0)) {
                                 IDObject object = (IDObject) board[i + k][j - k].getTag();
                                 if (object != null && object.getSign() == sign) {
                                     sum++;
-                                    Log.d(TAG, String.format("sum is %d", sum));
+                                    Log.d(TAG, String.format("right sum is %d", sum));
                                 } else {
                                     sum = 0;
                                     break;
                                 }
                                 if (sum == 5) {
-                                    IDObject idObject1 = new IDObject(0, 0);
                                     Log.d(TAG, "5 on checkLeftDiagonal");
                                     return sign;
                                 }
@@ -92,11 +91,6 @@ public class WinningChecker {
                         }
                     } else sum = 0;
                 else sum = 0;
-                if (sum == 5) {
-                    IDObject idObject1 = new IDObject(0, 0);
-                    Log.d(TAG, "5 on checkLeftDiagonal");
-                    return sign;
-                }
             }
         }
         return 1;
@@ -145,24 +139,18 @@ public class WinningChecker {
                             IDObject object = (IDObject) board[i + k][j + k].getTag();
                             if (object != null && object.getSign() == sign) {
                                 sum++;
-                                Log.d(TAG, String.format("sum is %d", sum));
+                                Log.d(TAG, String.format("left sum is %d", sum));
                             } else {
                                 sum = 0;
                                 break;
                             }
                             if (sum == 5) {
-                                IDObject idObject1 = new IDObject(0, 0);
                                 Log.d(TAG, "5 on checkLeftDiagonal");
                                 return sign;
                             }
                         }
                     } else sum = 0;
                 else sum = 0;
-                /*if (sum == 5) {
-                    IDObject idObject1 = new IDObject(0, 0);
-                    Log.d(TAG, "5 on checkLeftDiagonal");
-                    return sign;
-                }*/
             }
         }
         return 1;
@@ -173,11 +161,10 @@ public class WinningChecker {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
                 IDObject idObject = (IDObject) board[j][i].getTag();
-                if (idObject != null)
-                    if (idObject.getSign() == sign)
-                        sum++;
-                    else
-                        sum = 0;
+                if (idObject != null && idObject.getSign() == sign)
+                    sum++;
+                else
+                    sum = 0;
                 if (sum == 5)
                     return sign;
             }
@@ -191,11 +178,10 @@ public class WinningChecker {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
                 IDObject idObject = (IDObject) board[i][j].getTag();
-                if (idObject != null)
-                    if (idObject.getSign() == sign)
-                        sum++;
-                    else
-                        sum = 0;
+                if (idObject != null && idObject.getSign() == sign)
+                    sum++;
+                else
+                    sum = 0;
                 if (sum == 5)
                     return sign;
             }
